@@ -1,2 +1,3 @@
 #!/usr/bin/python3
-import pythoncool
+from pythoncool import cool
+cool()
