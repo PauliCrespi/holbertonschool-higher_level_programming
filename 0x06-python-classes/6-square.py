@@ -48,12 +48,12 @@ class Square:
         """print func"""
         if self.size <= 0:
             print("")
-            return("size must be >= 0")
-        for p in range(self.__position[1]):
-            print("")
-        for i in range(self.size):
-            for n in range(self.__position[0]):
-                print(" ", end="")
-            for j in range(self.__size):
-                print("#", end="")
-            print("")
+        else:
+            for p in range(self.__position[1]):
+                print("")
+            for i in range(self.size):
+                for n in range(self.__position[0]):
+                    print(" ", end="")
+                for j in range(self.__size):
+                    print("#", end="")
+                print("")
