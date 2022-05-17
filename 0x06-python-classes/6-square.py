@@ -1,36 +1,41 @@
 #!/usr/bin/python3
-"""task 6"""
+"""defines a class square"""
 
 
 class Square:
-    """Square"""
+    """class square"""
+
     def __init__(self, size=0, position=(0, 0)):
-        """self"""
+        """init class"""
         self.size = size
         self.position = position
 
+    def area(self):
+        """current square area"""
+        return self.__size ** 2
+
     @property
     def size(self):
-        """size"""
-        return(self.__size)
+        """retrieves size"""
+        return self.__size
 
     @size.setter
     def size(self, value):
-        """set size"""
+        """sets size"""
         if type(value) is not int:
             raise TypeError("size must be an integer")
-        elif value < 0:
+        if value < 0:
             raise ValueError("size must be >= 0")
         self.__size = value
 
     @property
     def position(self):
-        """position"""
-        return(self.__position)
+        """retrieves position"""
+        return self.__position
 
-    @size.setter
+    @position.setter
     def position(self, value):
-        """set position"""
+        """sets position"""
         if ((type(value) is not tuple) or
                 (len(value) != 2) or
                 (type(value[0]) is not int) or
@@ -40,21 +45,16 @@ class Square:
             raise TypeError("position must be a tuple of 2 positive integers")
         self.__position = value
 
-    def area(self):
-        """area func"""
-        return (self.__size * self.__size)
-
     def my_print(self):
-        """print func"""
-        if self.__size == 0:
+        """prints square to stdout"""
+        if self.size == 0:
             print("")
-            return
-        "Not empty (size != 0)"
-        for p in range(self.__position[1]):
-            print("")
-        for i in range(self.size):
-            for n in range(self.__position[0]):
-                print(" ", end="")
-            for j in range(self.__size):
-                print("#", end="")
-            print("")
+        else:
+            for x in range(self.position[1]):
+                print("")
+            for i in range(self.size):
+                for j in range(self.position[0]):
+                    print(" ", end="")
+                for n in range(self.size):
+                    print("#", end="")
+                print("")
