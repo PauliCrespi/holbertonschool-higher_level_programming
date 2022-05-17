@@ -3,4 +3,5 @@
 
 
 class Square:
+    """class set"""
     pass
