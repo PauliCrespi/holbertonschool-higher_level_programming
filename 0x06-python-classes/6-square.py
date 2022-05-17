@@ -50,12 +50,11 @@ class Square:
             print("")
             return
         "Not empty (size != 0)"
-        else:
-            for p in range(self.__position[1]):
-                print("")
-            for i in range(self.size):
-                for n in range(self.__position[0]):
-                    print(" ", end="")
-                for j in range(self.__size):
-                    print("#", end="")
-                print("")
+        for p in range(self.__position[1]):
+            print("")
+        for i in range(self.size):
+            for n in range(self.__position[0]):
+                print(" ", end="")
+            for j in range(self.__size):
+                print("#", end="")
+            print("")
