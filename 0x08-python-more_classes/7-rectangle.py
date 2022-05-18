@@ -1,73 +1,76 @@
 #!/usr/bin/python3
-"""class Rectangle"""
+""" tasks rectangle"""
 
 
 class Rectangle:
-    """Rectangle"""
+    """rectangle"""
 
     number_of_instances = 0
     print_symbol = "#"
 
     def __init__(self, width=0, height=0):
-        self.__height = height
-        self.__width = width
+        """init func"""
+        self.height = height
+        self.width = width
         Rectangle.number_of_instances += 1
 
     @property
-    def width(self):
-        """retrieve width"""
-        return self.__width
-
-    @width.setter
-    def width(self, value):
-        """set width"""
-        if type(value) is not int:
-            raise TypeError("width must be an integer")
-        if value < 0:
-            raise ValueError("width must be >= 0")
-        self.__width = value
-
-    @property
     def height(self):
-        """retrieve height"""
+        """return height"""
         return self.__height
 
     @height.setter
     def height(self, value):
-        """set height"""
+        """height setter"""
         if type(value) is not int:
             raise TypeError("height must be an integer")
         if value < 0:
             raise ValueError("height must be >= 0")
         self.__height = value
 
+    @property
+    def width(self):
+        """return width"""
+        return self.__width
+
+    @width.setter
+    def width(self, value):
+        """width setter"""
+        if type(value) is not int:
+            raise TypeError("width must be an integer")
+        if value < 0:
+            raise ValueError("width must be >= 0")
+        self.__width = value
+
     def area(self):
         """area func"""
-        return (self.height * self.width)
+        return self.height * self.width
 
     def perimeter(self):
         """perimeter func"""
-        if (self.height == 0) or (self.width == 0):
+        if self.height == 0 or self.width == 0:
             return 0
-        return ((self.height + self.width) * 2)
+        else:
+            return (self.width * 2) + (self.height * 2)
 
     def __str__(self):
-        """func print"""
-        arr = ""
-        if (self.height == 0) or (self.width == 0):
-            return arr
-        for h in range(self.height):
-            for w in range(self.width):
-                arr = arr + str(Rectangle.print_symbol)
-            if h != (self.height - 1):
-                arr = arr + "\n"
-        return arr
+        """str func"""
+        res = ""
+        if self.height == 0 or self.width == 0:
+            return (res)
+        else:
+            for i in range(self.height):
+                for j in range(self.width):
+                    res += str(self.print_symbol)
+                if (i != self.height - 1):
+                    res += "\n"
+            return res
 
     def __repr__(self):
-        """repr func"""
-        return("Rectangle(" + str(self.width) + ", " + str(self.height) + ")")
+        """repr func """
+        return ("Rectangle(" + str(self.width) + ", " + str(self.height) + ")")
 
     def __del__(self):
-        """del alert"""
-        print("Bye rectangle...")
+        """delete message"""
         Rectangle.number_of_instances -= 1
+        print("Bye rectangle...")
