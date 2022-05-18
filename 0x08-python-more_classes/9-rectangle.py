@@ -87,7 +87,7 @@ class Rectangle:
         else:
             return rect_2
 
-    @classmethod
+    @clasmethod
     def square(cls, size=0):
         """square class method"""
         return cls(size, size)
