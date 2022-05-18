@@ -10,8 +10,8 @@ class Rectangle:
 
     def __init__(self, width=0, height=0):
         """init func"""
-        self.height = height
         self.width = width
+        self.height = height
         Rectangle.number_of_instances += 1
 
     @property
@@ -87,7 +87,7 @@ class Rectangle:
         else:
             return rect_2
 
-    @clasmethod
+    @classmethod
     def square(cls, size=0):
         """square class method"""
         return cls(size, size)
