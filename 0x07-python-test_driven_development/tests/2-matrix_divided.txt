@@ -55,7 +55,7 @@ DIV IS NOT INT NEITHER BIGGER THAN 0:
         ZeroDivisionError: division by zero
 
 ===================================================
-ALL LISTS IN THE MATRIX MUSTE BE THE SAME LENGTH:
+ALL LISTS IN THE MATRIX MUST BE THE SAME LENGTH:
 ===================================================
 
         >>> matrix_divided([[1, 2, 3], [6, 3]], 8)
@@ -70,6 +70,10 @@ PASSING NONE:
         Traceback (most recent call last):
         TypeError: matrix must be a matrix (list of lists) of integers/floats
 
+	>>> matrix_divided([[1, 2, 3], [6, 3]], None)
+	Traceback (most recent call last):
+	TypeError: div must be a number
+
 ===============================================
 PASSING EMPTY:
 ===============================================
@@ -80,4 +84,6 @@ PASSING EMPTY:
 
 	>>> matrix_divided(, 8)
 	Traceback (most recent call last):
-	TypeError: matrix_divided() missing 1 required positional argument: 'matrix'
+	SyntaxError: invalid syntax
+
+
