@@ -25,6 +25,8 @@ of integers/floats")
             if type(matrix[hh][kk]) != int and type(matrix[hh][kk]) != float:
                 raise TypeError("matrix must be a matrix (list of lists)\
 of integers/floats")
+    if div is None:
+        raise TypeError("div must be a number")
     if type(div) is not int and type(div) is not float:
         raise TypeError("div must be a number")
     if div == 0:
