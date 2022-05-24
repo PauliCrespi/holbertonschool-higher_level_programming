@@ -14,6 +14,18 @@ MODULE:
 
 	>>> print_square = __import__('4-print_square').print_square
 
+============================================================
+Documentation
+============================================================
+
+	>>> module_doc = __import__("4-print_square").__doc__
+	>>> print(len(module_doc) > 0)
+	True
+
+	>>> func_doc = __import__("4-print_square").print_square.__doc__
+	>>> print(len(func_doc) > 0)
+	True
+
 ============================================================================
 TEST:
 ===============
