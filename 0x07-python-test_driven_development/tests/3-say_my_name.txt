@@ -1,0 +1,76 @@
+============================
+3-say_my_name.py
+============================
+
+Function that prints My name is <first name> <last name>. The function expects two strings as inputs.
+
+===========================
+MODULE:
+===========================
+
+
+	>>> say_my_name = __import__('3-say_my_name.py').say_my_name
+
+===========================
+TESTS:
+===========================
+SUCCESS CASES:
+===========================
+
+	>>> say_my_name("John", "Smith")
+	My name is John Smith
+
+	>>> say_my_name("Walter", "White")
+	My name is Walter White
+
+============================
+ONLY ONE INPUT:
+============================
+SUCCESS: Only first name
+
+	>>> say_my_name("Paulina")
+        My name is Paulina
+
+ERROR: Only last name
+
+	>>> say_my_name(, "Crespi")
+	TraceBack (most recent call last):
+	SyntaxError: invalid syntax
+
+
+===========================
+ERROR CASES:
+===========================
+WRONG TYPE OF INPUT (STRING EXPECTED):
+======================================
+
+	>>> say_my_name("John", 3)
+	TraceBack (most recent call last):
+	TypeError: last_name must be a string
+
+	>>> say_my_name((8, 0), "Crespi")
+        TraceBack (most recent call last):
+        TypeError: first_name must be a string
+
+	>>> say_my_name("John", None)
+        TraceBack (most recent call last):
+        TypeError: last_name must be a string
+
+	>>> say_my_name(None, "Walls")
+        TraceBack (most recent call last):
+        TypeError: last_name must be a string
+
+	>>> say_my_name()
+        TraceBack (most recent call last):
+        TypeError: last_name must be a string
+
+
+	>>> say_my_name(, "Homes")
+        TraceBack (most recent call last):
+        TypeError: last_name must be a string
+
+	>>> say_my_name("Johnny",)
+        TraceBack (most recent call last):
+        TypeError: last_name must be a string
+
+
