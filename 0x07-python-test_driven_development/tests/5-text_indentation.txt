@@ -26,41 +26,20 @@ Documentation
 SUCCESS CASES:
 =============================================================
 
-	>>> text_indentation("""Lorem ipsum dolor sit amet. Hcsdjkdi""")
-	Lorem ipsum dolor sit amet.
+	>>> text_indentation("Lorem? Hi")
+	Lorem?
+	<BLANKLINE>
+	Hi
 
-	Hcsdjkdi
+	>>> text_indentation("M:U.A")
+	M:
+	<BLANKLINE>
+	U.
+	<BLANKLINE>
+	A
 
-	>>> text_indentation("""Lorem ipsum? dolor sit amet. Hcsdjkdi""")
-        Lorem ipsum?
-
-	dolor sit amet.
-
-        Hcsdjkdi
-
-
-	>>> text_indentation("""Lorem ipsum? dolor: sit amet. Hcsdjkdi""")
-        Lorem ipsum?
-
-	dolor:
-
-	sit amet.
-
-        Hcsdjkdi
-
-
-	>>> text_indentation("""Lorem ipsum dolor sit amet.""")
-        Lorem ipsum dolor sit amet.
-	
-
-	>>> text_indentation("MUA")
-	MUA
-
-	>>> text_indentation('Oh, go!')
+	>>> text_indentation('Oh,')
 	Oh,
-
-	go!
-
 
 =================================================================
 ERROR CASES:
