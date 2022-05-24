@@ -10,6 +10,18 @@ MODULE:
 
 	>>> matrix_divided = __import__('2-matrix_divided').matrix_divided
 
+========================================
+Documentation
+========================================
+
+	>>> module_doc = __import__("2-matrix_divided").__doc__
+	>>> print(len(module_doc) > 0)
+	True
+
+	>>> func_doc = __import__("2-matrix_divided").matrix_divided.__doc__
+	>>> print(len(func_doc) > 0)
+	True
+
 ======================
 
 TESTS:
