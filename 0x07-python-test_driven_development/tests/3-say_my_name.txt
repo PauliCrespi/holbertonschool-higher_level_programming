@@ -50,9 +50,17 @@ ONLY ONE INPUT: SUCCESS: Only first name. ERROR: Only last name
 ERROR CASES: WRONG TYPE OF INPUT (STRING EXPECTED):
 =====================================================
 
+	>>> say_my_name(["Kenny"], "Hampton")
+        Traceback (most recent call last):
+        TypeError: first_name must be a string
+
 	>>> say_my_name("John", 3)
 	Traceback (most recent call last):
 	TypeError: last_name must be a string
+
+        >>> say_my_name("Molly", 3.87776545)
+        Traceback (most recent call last):
+        TypeError: last_name must be a string
 
 	>>> say_my_name((8, 0), "Crespi")
 	Traceback (most recent call last):
@@ -69,4 +77,9 @@ ERROR CASES: WRONG TYPE OF INPUT (STRING EXPECTED):
 	>>> say_my_name()
 	Traceback (most recent call last):
 	TypeError: say_my_name() missing 1 required positional argument: 'first_name'
+
+	>>> say_my_name(None)
+	Traceback (most recent call last):
+	TypeError: first_name must be a string
+
 
