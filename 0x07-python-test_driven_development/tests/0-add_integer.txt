@@ -9,7 +9,19 @@ Module:
 
 	>>> add_integer = __import__('0-add_integer').add_integer
 
+===========================
+Documentation
+===========================
 
+	>>> module_doc = __import__("0-add_integer").__doc__
+	>>> print(len(module_doc) > 0)
+	True
+
+	>>> func_doc = __import__("0-add_integer").add_integer.__doc__
+	>>> print(len(func_doc) > 0)
+	True
+
+====================
 Tests:
 =================================================================================
 SUCCESS CASES: numbers have to be int, float is accepted but converted into int.
