@@ -11,6 +11,18 @@ MODULE:
 
 	>>> say_my_name = __import__("3-say_my_name").say_my_name
 
+============================================================
+Documentation
+============================================================
+
+	>>> module_doc = __import__("3-say_my_name").__doc__
+	>>> print(len(module_doc) > 0)
+	True
+
+	>>> func_doc = __import__("3-say_my_name").say_my_name.__doc__
+	>>> print(len(func_doc) > 0)
+	True
+
 ===========================
 TESTS:
 ===========================
