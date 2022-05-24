@@ -12,7 +12,7 @@ Expects an int input
 MODULE:
 =======================
 
-	>>> print_square = __import__('4-print_square.py').print_square
+	>>> print_square = __import__('4-print_square').print_square
 
 ============================================================================
 TEST:
@@ -41,13 +41,16 @@ SUCCESS CASES:
 	>>> print_square(1)
 	#
 
+	>>> print_square(0)
+	
+
 =======================================
 ERROR CASES: only int input accepted.
 =======================================
 NEGATIVE INT CASE:
 ==============
 
-	>>>print_square(-128)
+	>>> print_square(-128)
 	Traceback (most recent call last):
 	ValueError: size must be >= 0
 
@@ -55,7 +58,7 @@ NEGATIVE INT CASE:
 NEGATIVE FLOAT CASE:
 =====================
 
-        >>>print_square(-128.784239)
+        >>> print_square(-128.784239)
         Traceback (most recent call last):
         TypeError: size must be an integer
 
@@ -63,7 +66,7 @@ NEGATIVE FLOAT CASE:
 FLOAT CASE:
 =====================
 
-        >>>print_square(784.239)
+        >>> print_square(784.239)
         Traceback (most recent call last):
         TypeError: size must be an integer
 
@@ -71,32 +74,43 @@ FLOAT CASE:
 STRING CASE:
 ====================
 
-	>>>print_square("4239")
+	>>> print_square("4239")
         Traceback (most recent call last):
         TypeError: size must be an integer
 
-	>>>print_square("seven")
+	>>> print_square("seven")
         Traceback (most recent call last):
         TypeError: size must be an integer
+
 ===================
 CHAR CASE:
 ===================
 
-	>>>print_square(c)
+	>>> print_square('c')
         Traceback (most recent call last):
         TypeError: size must be an integer
+
 ==================
 ARRAY CASE:
 ==================
 
-	>>>print_square([3, 5, 7])
+	>>> print_square([3, 5, 7])
         Traceback (most recent call last):
         TypeError: size must be an integer
 
 ==================
 SET CASE:
 ==================
-	>>>print_square((8, 239))
+
+	>>> print_square((8, 239))
         Traceback (most recent call last):
         TypeError: size must be an integer
+
+=================
+None:
+=================
+
+	>>> print_square(None)
+	Traceback (most recent call last):
+	TypeError: size must be an integer
 
