@@ -1,25 +1,11 @@
 #!/usr/bin/python3
-"""task 7"""
+"""task 8"""
 
-
-class BaseGeometry:
-    """Class"""
-    pass
-
-    def area(self):
-        """area func"""
-        raise Exception("area() is not implemented")
-
-    def integer_validator(self, name, value):
-        """func"""
-        if type(value) is not int:
-            raise TypeError(f"{name} must be an integer")
-        if value <= 0:
-            raise ValueError(f"{name} must be greater than 0")
-
+BaseGeometry = __import__('7-base_geometry').BaseGeometry
+"""import class"""
 
 class Rectangle(BaseGeometry):
-        """Class"""
+    """Class"""
 
     def __init__(self, width, height):
         """f"""
