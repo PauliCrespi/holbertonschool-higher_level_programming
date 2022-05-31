@@ -1,0 +1,86 @@
+======================
+7-base_geometry.py
+======================
+
+def integer_validator(self, name, value):
+
+===============================================================
+
+MODULE:
+
+===============================================================
+
+	>>> BaseGeometry = __import__("7-base_geometry").BaseGeometry
+
+	>>> module_doc = __import__('7-base_geometry').__doc__
+	>>> print(len(module_doc) > 0)
+	True
+
+	>>> class_doc = __import__('7-base_geometry').BaseGeometry.__doc__
+	>>> print(len(class_doc) > 0)
+	True
+
+	>>> function_doc = __import__('7-base_geometry').BaseGeometry.area.__doc__
+	>>> print(len(function_doc) > 0)
+	True
+
+	>>> function_doc = __import__('7-base_geometry').BaseGeometry.integer_validator.__doc__
+	>>> print(len(function_doc) > 0)
+	True
+
+===============================================================
+SUCESS:
+===============================================================
+
+	>>> bg = BaseGeometry()
+	>>> bg.integer_validator("range", 19)
+
+        >>> bg = BaseGeometry()
+        >>> bg.integer_validator("quantity", 287)
+
+======================================================
+ERRORS:
+======================================================
+
+        >>> bg = BaseGeometry()
+
+
+	>>> bg = BaseGeometry()
+	>>> bg.integer_validator()
+	Traceback (most recent call last):
+	TypeError: integer_validator() missing 2 required positional arguments: 'name' and 'value'
+
+	>>> bg = BaseGeometry()
+	>>> bg.integer_validator(5)
+	Traceback (most recent call last):
+	TypeError: integer_validator() missing 1 required positional argument: 'value'
+
+	>>> bg = BaseGeometry()
+	>>> bg.integer_validator("height")
+	Traceback (most recent call last):
+	TypeError: integer_validator() missing 1 required positional argument: 'value'
+
+        >>> bg = BaseGeometry()
+        >>> bg.integer_validator("height", 8, 90)
+        Traceback (most recent call last):
+        TypeError: integer_validator() takes 3 positional arguments but 4 were given
+
+	>>> bg = BaseGeometry()
+	>>> bg.integer_validator("name", "John")
+        Traceback (most recent call last):
+	TypeError: name must be an integer
+
+	>>> bg = BaseGeometry()
+	>>> bg.integer_validator("surname", 6.8)
+        Traceback (most recent call last):
+	TypeError: surname must be an integer
+
+	>>> bg.integer_validator("age", 0)
+        Traceback (most recent call last):
+	ValueError: age must be greater than 0
+
+	>>> bg.integer_validator("width", -832)
+        Traceback (most recent call last):
+	ValueError: width must be greater than 0
+
+
