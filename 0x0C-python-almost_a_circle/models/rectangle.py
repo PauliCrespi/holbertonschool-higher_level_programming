@@ -87,3 +87,19 @@ class Rectangle(Base):
         """str func"""
         return ("[Rectangle] (" + str(self.id) + ") " + str(self.x) + "/" +
                 str(self.y) + " - " + str(self.width) + "/" + str(self.height))
+
+    def update(self, *args):
+        """update func"""
+        count = 0
+        for i in args:
+            if count == 0:
+                self.id = i
+            if count == 1:
+                self.width = i
+            if count == 2:
+                self.height = i
+            if count == 3:
+                self.x = i
+            if count == 4:
+                self.y = i
+            count += 1
