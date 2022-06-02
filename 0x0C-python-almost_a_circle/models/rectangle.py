@@ -88,18 +88,31 @@ class Rectangle(Base):
         return ("[Rectangle] (" + str(self.id) + ") " + str(self.x) + "/" +
                 str(self.y) + " - " + str(self.width) + "/" + str(self.height))
 
-    def update(self, *args):
+    def update(self, *args, **kwargs):
         """update func"""
-        count = 0
-        for i in args:
-            if count == 0:
-                self.id = i
-            if count == 1:
-                self.width = i
-            if count == 2:
-                self.height = i
-            if count == 3:
-                self.x = i
-            if count == 4:
-                self.y = i
-            count += 1
+        if (args is not None and len(args) > 0):
+            count = 0
+            for i in args:
+                if count == 0:
+                    self.id = i
+                if count == 1:
+                    self.width = i
+                if count == 2:
+                    self.height = i
+                if count == 3:
+                    self.x = i
+                if count == 4:
+                    self.y = i
+                count += 1
+        elif kwargs is not None:
+            for key, value in kwargs.items():
+                if key == "id":
+                    self.id = value
+                elif key == "width":
+                    self.width = value
+                elif key == "height":
+                    self.height = value
+                elif key == "x":
+                    self.x = value
+                elif key == "y":
+                    self.y = value
