@@ -23,3 +23,28 @@ class Square(Rectangle):
         """str func"""
         return ("[Square] (" + str(self.id) + ") " + str(self.x) + "/" +
                 str(self.y) + " - " + str(self.width))
+
+    def update(self, *args, **kwargs):
+        """update func"""
+        if (args is not None and len(args) > 0):
+            count = 0
+            for i in args:
+                if count == 0:
+                    self.id = i
+                if count == 1:
+                    self.size = i
+                if count == 2:
+                    self.x = i
+                if count == 3:
+                    self.y = i
+                count += 1
+        elif kwargs is not None:
+            for key, value in kwargs.items():
+                if key == "id":
+                    self.id = value
+                elif key == "size":
+                    self.size = value
+                elif key == "x":
+                    self.x = value
+                elif key == "y":
+                    self.y = value
