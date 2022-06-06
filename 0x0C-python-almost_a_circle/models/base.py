@@ -32,3 +32,19 @@ class Base:
             dic_lis.append(c.to_dictionary())
         with open(cls.__name__ + '.json', 'w', encoding="utf-8") as f:
             f.write(cls.to_json_string(dic_lis))
+
+    @staticmethod
+    def from_json_string(json_string):
+        """from json to string"""
+        if json_string is None or len(json_string) == 0:
+            return "[]"
+        else:
+            return(json.dumps(json_string))
+
+    @classmethod
+    def create(cls, **dictionary):
+        """create func"""
+        inst = cls(1, 1)
+        if inst is not None:
+            inst.update(**dictionary)
+        return inst
