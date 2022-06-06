@@ -19,9 +19,9 @@ class Base:
     def to_json_string(list_dictionaries):
         """to json func"""
         if list_dictionaries is None:
-            return []
-        if len(list_dictionaries) == 0:
-            return []
+            return "[]"
+        elif len(list_dictionaries) == 0:
+            return "[]"
         return (json.dumps(list_dictionaries))
 
     @classmethod
@@ -38,7 +38,7 @@ class Base:
         """from json to string"""
         if json_string is None or len(json_string) == 0:
             return "[]"
-        return(json.dumps(json_string))
+        return(json.loads(json_string))
 
     @classmethod
     def create(cls, **dictionary):
