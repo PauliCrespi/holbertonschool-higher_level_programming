@@ -15,20 +15,6 @@ class Rectangle(Base):
         super().__init__(id)
 
     @property
-    def width(self):
-        """getter"""
-        return self.__width
-
-    @width.setter
-    def width(self, value):
-        """setter"""
-        if (type(value) is not int):
-            raise TypeError("width must be an integer")
-        if value <= 0:
-            raise ValueError("width must be > 0")
-        self.__width = value
-
-    @property
     def height(self):
         """getter"""
         return self.__height
@@ -41,6 +27,20 @@ class Rectangle(Base):
         if value <= 0:
             raise ValueError("height muste be > 0")
         self.__height = value
+
+    @property
+    def width(self):
+        """getter"""
+        return self.__width
+
+    @width.setter
+    def width(self, value):
+        """setter"""
+        if (type(value) is not int):
+            raise TypeError("width must be an integer")
+        if value <= 0:
+            raise ValueError("width must be > 0")
+        self.__width = value
 
     @property
     def x(self):
