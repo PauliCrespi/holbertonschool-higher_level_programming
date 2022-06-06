@@ -46,6 +46,5 @@ class Base:
     def create(cls, **dictionary):
         """create func"""
         inst = cls(1, 1)
-        if inst is not None:
-            inst.update(**dictionary)
+        inst.update(**dictionary)
         return inst
