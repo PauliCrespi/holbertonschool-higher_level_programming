@@ -49,3 +49,18 @@ class Base:
         if inst is not None:
             inst.update(**dictionary)
         return inst
+
+    @classmethod
+    def load_from_file(cls):
+        """ load from file """
+        filename = "{}.json".format(cls.__name__)
+        try:
+            with open(filename, encoding="utf-8") as f:
+                info = f.read()
+        except FileNotFoundError:
+            return []
+        lis = cls.from_json_string(info)
+        ins = []
+        for i in lis:
+            ins.append(cls.create(**i))
+        return ins
