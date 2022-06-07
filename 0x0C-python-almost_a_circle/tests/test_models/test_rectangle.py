@@ -38,3 +38,28 @@ class TestRectangle(unittest.TestCase):
         self.assertEqual(c.height, 67967)
         self.assertEqual(c.x, 8)
         self.assertEqual(c.y, 90)
+
+    def test_7(self):
+        """7"""
+        with self.assertRaises(ValueError):
+            Rectangle(-6, 5)
+
+    def test_8(self):
+        """8"""
+        with self.assertRaises(ValueError):
+            Rectangle(16, -5)
+
+    def test_9(self):
+        """9"""
+        with self.assertRaises(TypeError):
+            Rectangle("16", 4)
+
+    def test_10(self):
+        """10"""
+        with self.assertRaises(TypeError):
+            Rectangle(8, '4')
+
+    def test_11(self):
+        """11"""
+        with self.assertRaises(TypeError):
+            Rectangle(8, "two")
