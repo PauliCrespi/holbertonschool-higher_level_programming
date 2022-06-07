@@ -49,3 +49,23 @@ class TestSquare(unittest.TestCase):
         self.assertEqual(d.x, 28)
         self.assertEqual(d.y, 5)
         self.assertEqual(d.id, 21)
+
+    def test_4(self):
+        """4"""
+        with self.assertRaises(ValueError):
+            Square(-6)
+
+    def test_5(self):
+        """5"""
+        with self.assertRaises(TypeError):
+            Square("6")
+
+    def test_6(self):
+        """6"""
+        with self.assertRaises(TypeError):
+            Square("two")
+
+    def test_7(self):
+        """7"""
+        with self.assertRaises(TypeError):
+            Square('4')
