@@ -2,6 +2,7 @@
 """Unittest"""
 import unittest
 from models.base import Base
+from models.rectangle import Rectangle
 
 
 class TestBase(unittest.TestCase):
@@ -42,6 +43,17 @@ class TestBase(unittest.TestCase):
         """5"""
         neg = Base(-132)
         self.assertEqual(neg.id, -132)
+
+    def test_6(self):
+        """6"""
+        Base.__nb_objects = 0
+        rec = Rectangle(4, 5, 6, 2)
+        dic = rec.to_dictionary()
+        self.assertTrue(type(dic) is dict)
+        to_j = Base.to_json_string([dic])
+        self.assertTrue(type(to_j) is str)
+        self.assertEqual(to_j, '[{"id": 4, "width": 4, "height": 5, \
+"x": 6, "y": 2}]')
 
 
 if __name__ == '__main__':
