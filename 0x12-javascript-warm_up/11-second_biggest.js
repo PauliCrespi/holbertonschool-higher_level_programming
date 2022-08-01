@@ -11,5 +11,11 @@ if (args[2] === undefined) {
       aux = args[i];
     }
   }
-  console.log(aux);
+  let temp = process.argv[2];
+  for (let j = 0; j <= args.length; j++) {
+    if (args[j] > temp && args[j] < aux) {
+      temp = args[j];
+    }
+  }
+  console.log(temp);
 }
