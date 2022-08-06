@@ -16,6 +16,8 @@ if __name__ == "__main__":
     session = Session()
     try:
         first = session.query(State).order_by(State.id).first()
+        if query.first() is None:
+            print("Nothing")
         print("{}: {}".format(first.id, first.name))
         session.commit()
     except SQLAlchemyError as e:
