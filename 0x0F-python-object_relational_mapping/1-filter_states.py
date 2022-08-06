@@ -12,7 +12,6 @@ try:
     query_rows = cur.fetchall()
     for row in query_rows:
         print(row)
-    cur.close()
     conn.close()
 
 except Exception:
