@@ -1,3 +1,3 @@
 #!/bin/bash
 #task 100
-curl -sI "$1"
+curl -so /dev/null -I -w "%{http_code}"  "$1"
