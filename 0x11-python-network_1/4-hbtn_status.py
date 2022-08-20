@@ -1,6 +1,5 @@
 #!/usr/bin/python3
 """task 4"""
-from sys import argv
 import requests
 
 
