@@ -1,4 +1,5 @@
 #!/usr/bin/python3
+"""task 1"""
 import urllib.request
 import sys
 
