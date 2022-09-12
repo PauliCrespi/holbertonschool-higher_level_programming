@@ -4,9 +4,9 @@ const axios = require('axios');
 
 axios
   .get(filmurl)
-  .then(res => {
+  .then((response) => {
     let count = 0;
-    for (const tittles of res.data.results) {
+    for (const tittles of response.data.results) {
       for (const vipchar of tittles.characters) {
         if (vipchar === 'https://swapi-api.hbtn.io/api/people/18/') {
           count = count + 1;
@@ -16,5 +16,5 @@ axios
     console.log(count);
   })
   .catch(error => {
-    console.error(error);
+    console.error('code:', error.response.status);
   });
