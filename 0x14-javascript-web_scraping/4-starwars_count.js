@@ -16,5 +16,5 @@ axios
     console.log(count);
   })
   .catch(error => {
-    console.log('code': error.response.status);
+    console.e('code:', error.response.status);
   });
