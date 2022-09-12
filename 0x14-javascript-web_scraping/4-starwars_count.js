@@ -8,7 +8,7 @@ axios
     let count = 0;
     for (const tittles of response.data.results) {
       for (const vipchar of tittles.characters) {
-        if (vipchar === 'https://swapi-api.hbtn.io/api/people/18/') {
+        if (vipchar.endsWith('18/')) {
           count = count + 1;
         }
       }
@@ -16,5 +16,5 @@ axios
     console.log(count);
   })
   .catch(error => {
-    console.e('code:', error.response.status);
+    console.error(`code: ${error.response.status}`);
   });
